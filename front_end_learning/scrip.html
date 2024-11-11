@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="empty"></p>
+    <p id="empty"></p>
+    <button id="click" onclick="vari()">click here</button>
+    <script>
+        var x="20";
+        const a=(x)=>{x+20}
+        function vari(){
+            let x=10;
+            x=20;
+            document.getElementById('empty').textContent=x;
+            console.log("inside block",x)
+        }        
+        console.log("outside block");
+        document.getElementById('click').addEventListener("click",function(){
+            let x=10;
+            x=20;
+            document.getElementById('empty').textContent=x;
+        })</script>
+</body>
+</html>
