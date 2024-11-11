@@ -6,11 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Square Values of Object Elements</h1>
-    
-    <div id="result" class="output">
-     
-    </div>
+   
    <!--  <p id="empty"></p>
     <p id="empty"></p>
     <button id="click" onclick="vari()">click here</button>
@@ -30,6 +26,16 @@
             document.getElementById('empty').textContent=x;
         })</script> -->
 
+
+
+
+
+
+       <!--  <h1>Square Values of Object Elements</h1>
+    
+        <div id="result" class="output">
+         
+        </div>
  <script>     
 
 let numbersObject = {
@@ -62,7 +68,46 @@ resultHTML += '</ul>';
 
 resultDiv.innerHTML = resultHTML;
 
-</script>
+</script> -->
+<div id="result" class="output">
+         
+</div>
+<script>
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+
+function cubeAndFilterEven(arr) {
+  
+  let cubed = arr.map(num => Math.pow(num, 3));
+
+  let evens = cubed.filter(num => num % 2 === 0);
+  return evens;
+}
+
+
+let result = cubeAndFilterEven(numbers);
+console.log(result);
+document.getElementById('result').innerHTML = 'Result: ' + result.join(', ');
+    </script>
+
+
+
+
+<script>
+    const cart=[{name:"laptop",price:50000},
+        
+           { name:"phone",price:65000},
+           {name:"tabet",price:8000}]
+           const newcart=cart.reduce((accumulator,item)=>accumulator+item.price,0);
+           console.log(newcart);
+        
+    
+    </script>
+
+
+
+
+
 
 </body>
 </html>
