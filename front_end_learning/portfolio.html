@@ -139,5 +139,21 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Selecting the email button and modal
+        const emailButton = document.getElementById('emailButton');
+        const modal = new bootstrap.Modal(document.getElementById('contactModal'));
+
+        // Add click event listener with arrow function to display contact information and change button color
+        emailButton.addEventListener('click', () => {
+            // Show modal with contact information
+            modal.show();
+
+            // Change button color on click using arrow function
+            emailButton.style.backgroundColor = '#28a745';  // Green color
+            emailButton.style.borderColor = '#28a745';  // Green border
+            emailButton.innerText = "Thank You for Contacting!";
+        });
+    </script>
 </body>
 </html>

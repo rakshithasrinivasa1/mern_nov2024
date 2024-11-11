@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio</title>
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .hero {
+            background: url('https://via.placeholder.com/1920x1080') no-repeat center center;
+            background-size: cover;
+            height: 100vh;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .card {
+            transition: transform 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        /* Modal Styles */
+        .modal-content {
+            background-color: #f8f9fa;
+        }
+        .modal-header {
+            background-color: #343a40;
+            color: white;
+        }
+        .modal-footer {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-light py-5">
+        <div class="container text-center">
+            <h2>Contact Me</h2>
+            <p>If you'd like to get in touch, feel free to reach out via email or follow me on social media!</p>
+            <button id="emailButton" class="btn btn-primary">Email Me</button>
+        </div>
+    </section>
+
+    <!-- Modal for displaying contact details -->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contactModalLabel">Contact Information</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Email:</strong> rakshithasrinivasa111@gmail.com</p>
+                    <p><strong>Phone:</strong> +91 901921071</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 rakshithasrinivasa. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Selecting the email button and modal
+        const emailButton = document.getElementById('emailButton');
+        const modal = new bootstrap.Modal(document.getElementById('contactModal'));
+
+        // Add click event listener with arrow function to display contact information and change button color
+        emailButton.addEventListener('click', () => {
+            // Show modal with contact information
+            modal.show();
+
+            // Change button color on click using arrow function
+            emailButton.style.backgroundColor = '#808080';  // Green color
+            emailButton.style.borderColor = '#808080';  // Green border
+            emailButton.innerText = "Thank You for Contacting!";
+        });
+    </script>
+</body>
+</html>

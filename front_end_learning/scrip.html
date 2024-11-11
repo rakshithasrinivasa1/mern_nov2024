@@ -6,7 +6,12 @@
     <title>Document</title>
 </head>
 <body>
-    <p id="empty"></p>
+    <h1>Square Values of Object Elements</h1>
+    
+    <div id="result" class="output">
+     
+    </div>
+   <!--  <p id="empty"></p>
     <p id="empty"></p>
     <button id="click" onclick="vari()">click here</button>
     <script>
@@ -23,6 +28,41 @@
             let x=10;
             x=20;
             document.getElementById('empty').textContent=x;
-        })</script>
+        })</script> -->
+
+ <script>     
+
+let numbersObject = {
+    a: 2,
+    b: 4,
+    c: 3,
+    d: 5
+};
+
+
+let squaredObject = {};
+
+
+Object.values(numbersObject).forEach(value => {
+   
+    squaredObject[value] = value * value;
+});
+
+
+console.log(squaredObject);
+const resultDiv = document.getElementById('result');
+
+
+let resultHTML = '<ul>';
+for (let key in squaredObject) {
+    resultHTML += `<li>${key}: ${squaredObject[key]}</li>`;
+}
+resultHTML += '</ul>';
+
+
+resultDiv.innerHTML = resultHTML;
+
+</script>
+
 </body>
 </html>
