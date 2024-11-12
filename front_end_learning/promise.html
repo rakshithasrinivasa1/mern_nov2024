@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+function delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+
+async function getUser() {
+    await delay(5000); 
+    return [
+        { name: "john", age: 25 },
+        { name: "emily", age: 30 },
+        { name: "micheal", age: 20 }
+    ];
+}
+
+async function getUserID(id) {
+    await delay(7000); 
+    const users = [
+        { id: 1, name: "john", age: 25 },
+        { id: 2, name: "emily", age: 30 },
+        { id: 3, name: "micheal", age: 20 }
+    ];
+
+
+    const user = users.find(u => u.id == id);
+    return user ? user : null; 
+}
+
+
+async function exampleUsage() {
+  
+    const users = await getUser();
+    console.log('All users:', users);
+
+   try{
+    const userID = 2;
+    const user = await getUserID(userID);
+    console.log('User with ID ' + userID + ':', user);}
+    catch(error){
+        console.log('error',error);
+    }
+}
+
+
+exampleUsage();
+
+    </script>
+</body>
+</html>

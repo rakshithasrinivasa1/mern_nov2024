@@ -69,7 +69,10 @@ resultHTML += '</ul>';
 resultDiv.innerHTML = resultHTML;
 
 </script> -->
-<div id="result" class="output">
+
+
+
+<!-- <div id="result" class="output">
          
 </div>
 <script>
@@ -103,11 +106,60 @@ document.getElementById('result').innerHTML = 'Result: ' + result.join(', ');
         
     
     </script>
+ -->
 
 
 
 
+<script>
+ function fetchData(){
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=> {
+            const success=true;
+            if(success){
+                resolve("fetched data successfully");}
 
+                else{
+                    reject("failed to fetch data");
+
+                }
+            
+            
+        },1000);
+    });
+ }
+ function processData(data){
+    return new Promise((resolve,reject)=>{
+ setTimeout(()=>{
+const processedData=data+"and processed";
+resolve(processedData)
+ },5000);
+    });
+ }
+ function saveData(processedData){
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            resolve(processedData +"and saved!");
+
+        },7000);
+
+    });
+ }
+async function handleData(){
+    try{
+        const data=await fetchData();
+        const processedData =await processData(data);
+        const result=await saveData(processedData);
+        console.log('data saved',result);
+
+    }
+    catch(error){
+        console.log('error',error);
+    }
+}
+handleData();
+
+</script>
 
 </body>
 </html>
